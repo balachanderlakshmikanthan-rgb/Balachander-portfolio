@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Balachander — Photography</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <style>
+    :root{
+      --accent:#00b894;
+      --bg:#0f0f0f;
+      --muted:#bdbdbd;
+      --max-width:1200px;
+    }
+
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
+      background:var(--bg);
+      color:#fff;
+    }
+    a{text-decoration:none;color:inherit;}
+
+    /* Header */
+    .site-header{
+      position:fixed;
+      left:0;right:0;top:0;
+      height:68px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 28px;
+      background:rgba(15,15,15,0.7);
+      backdrop-filter:blur(8px);
+      z-index:100;
+    }
+
+    .logo{
+      font-family:'Playfair Display',serif;
+      font-weight:700;
+      letter-spacing:0.6px;
+    }
+
+    .nav{
+      display:flex;
+      gap:22px;
+      align-items:center;
+    }
+
+    .nav a{
+      font-size:14px;
+      color:var(--muted);
+      padding:6px 8px;
+    }
+
+    .nav a:hover,
+    .nav a[aria-current="page"]{
+      color:#fff;
+      border-bottom:2px solid var(--accent);
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 540px;
+      min-height:100vh;
+      align-items:center;
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:28px;
+      padding-top:120px;
+    }
+
+    .hero-left{padding-right:24px;}
+
+    .hero-left .photo{
+      width:100%;
+      height:75vh;
+      max-height:820px;
+      background-image:url("images/Hero.jpg");
+      background-size:cover;
+      background-position:center;
+      border-radius:6px;
+      box-shadow:0 20px 50px rgba(0,0,0,.6);
+    }
+
+    .hero-right{padding-left:36px;}
+
+    .eyebrow{
+      font-size:13px;
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:1.6px;
+      margin-bottom:10px;
+    }
+
+    .site-title{
+      font-family:'Playfair Display',serif;
+      font-size:36px;
+      line-height:1.05;
+      margin:0 0 12px;
+    }
+
+    .lead{
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      margin-bottom:22px;
+      max-width:420px;
+    }
+
+    .cta{
+      display:flex;
+      gap:12px;
+    }
+
+    .btn{
+      padding:10px 16px;
+      border-radius:4px;
+      border:2px solid rgba(255,255,255,.08);
+      font-weight:600;
+      background:transparent;
+      color:#fff;
+    }
+
+    .btn.primary{
+      border-color:var(--accent);
+      color:var(--accent);
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .contact-strip{
+      margin-top:34px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.03);
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .socials{
+      margin-left:auto;
+      display:flex;
+      gap:12px;
+    }
+
+    /* Responsive */
+    @media (max-width:1100px){
+      .hero{
+        grid-template-columns:1fr 420px;
+        padding:20px;
+        padding-top:120px;
+      }
+      .hero-left .photo{height:65vh;}
+    }
+
+    @media (max-width:880px){
+      .hero{
+        grid-template-columns:1fr;
+        padding:20px;
+        padding-top:120px;
+      }
+      .hero-left{order:2;}
+      .hero-right{order:1;padding-left:0;}
+      .hero-left .photo{height:48vh;}
+      .site-title{font-size:28px;}
+    }
+
+    @media (max-width:480px){
+      .nav{display:none;}
+      .hero{padding:14px;padding-top:120px;}
+      .hero-left .photo{height:40vh;border-radius:4px;}
+      .site-title{font-size:22px;}
+      .lead{font-size:15px;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Main Header -->
+  <header class="site-header">
+    <div class="logo">balachander</div>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-left">
+        <div class="photo" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-right">
+        <div class="eyebrow">Photography</div>
+
+        <h1 class="site-title">
+          Balachander Lakshmikanthan<br>
+          <span style="font-size:18px;font-weight:500;color:var(--muted);">
+            Portrait | Fashion | Travel | Street | Weddings
+          </span>
+        </h1>
+
+        <p class="lead">
+          I specialise in capturing authentic moments with a cinematic and minimal aesthetic —
+          portraits, editorial fashion, street stories and travel. Based in India, available for
+          commissions and collaborations worldwide.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="portfolio.html">See My Portfolio</a>
+          <a class="btn" href="contact.html">Book a Shoot</a>
+        </div>
+
+        <div class="contact-strip">
+          <div style="font-size:13px;color:var(--muted)">Based in India • Available worldwide</div>
+          <div class="socials">
+            <a href="#" title="Instagram">IG</a>
+            <a href="#" title="Twitter">TW</a>
+            <a href="#" title="Behance">BE</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

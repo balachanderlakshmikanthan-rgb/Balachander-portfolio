@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Balachander</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f0f0f;
+      --muted:#bdbdbd;
+      --accent:#00b894;
+      --max-width:900px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:#fff;
+      font-family:Inter,system-ui,Roboto,Arial;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{text-decoration:none;color:inherit}
+
+    /* HEADER */
+    .site-header{
+      position:fixed;
+      left:0;right:0;top:0;
+      height:68px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 28px;
+      background:rgba(15,15,15,0.7);
+      backdrop-filter:blur(8px);
+      z-index:200;
+    }
+
+    .logo{font-family:'Playfair Display',serif;font-weight:700}
+    .nav{display:flex;gap:22px;align-items:center}
+    .nav a{font-size:14px;color:var(--muted);padding:6px 8px}
+    .nav a:hover,
+    .nav a[aria-current="page"]{color:#fff;border-bottom:2px solid var(--accent)}
+
+    /* CONTAINER */
+    .container{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:120px 28px 40px;
+    }
+
+    h1{
+      font-family:'Playfair Display',serif;
+      font-size:32px;
+      margin-bottom:14px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:30px;
+      align-items:start;
+    }
+
+    .card{
+      background:rgba(255,255,255,.02);
+      padding:20px;
+      border-radius:8px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:6px;
+      font-weight:600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea{
+      width:100%;
+      padding:10px;
+      border-radius:6px;
+      border:1px solid rgba(255,255,255,.06);
+      background:transparent;
+      color:#fff;
+      margin-bottom:12px;
+      font-size:15px;
+    }
+
+    textarea{min-height:140px;resize:vertical}
+
+    .btn{
+      padding:10px 14px;
+      border-radius:6px;
+      border:2px solid var(--accent);
+      color:var(--accent);
+      background:transparent;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .info{color:var(--muted);font-size:14px;line-height:1.5}
+
+    footer{
+      margin-top:40px;
+      padding-top:20px;
+      border-top:1px solid rgba(255,255,255,.05);
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr;}
+    }
+    @media (max-width:480px){
+      .container{padding:120px 18px 40px}
+      .nav{display:none}
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">balachander</div>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </header>
+
+  <!-- CONTENT -->
+  <div class="container">
+    <h1>Contact</h1>
+
+    <div class="grid">
+
+      <!-- Contact Info -->
+      <div class="card">
+        <p class="info">For commissions, bookings or collaborations, feel free to get in touch.</p>
+
+        <p class="info" style="margin-top:12px">
+          <strong>Email:</strong>
+          <a href="mailto:youremail@example.com">balachanderlaskhmikanthan@gmail.com</a>
+        </p>
+
+        <p class="info">
+          <strong>Phone:</strong>
+          <a href="tel:+919999999999">+91 8939758890</a>
+        </p>
+
+        <p class="info">
+          <strong>Instagram:</strong>
+          <a href="https://instagram.com/yourhandle" target="_blank">instagram.com/yourhandle</a>
+        </p>
+
+        <p class="info" style="margin-top:18px">
+          I usually respond within 24–48 hours.
+        </p>
+      </div>
+
+      <!-- Contact Form -->
+      <form class="card" id="contactForm" action="mailto:youremail@example.com" method="post" enctype="text/plain" onsubmit="return submitFallback(event)">
+        <label for="name">Your Name</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="email">Your Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      © <span id="year"></span> Balachander — Photography  
+    </footer>
+
+  </div>
+
+  <!-- YEAR SCRIPT -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function submitFallback(e){
+      alert("This will open your email app to send the message. If you want a direct-send form (no email app needed), I can set up EmailJS for you.");
+      return true;
+    }
+  </script>
+
+</body>
+</html>
